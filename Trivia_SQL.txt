@@ -1,0 +1,105 @@
+CREATE TABLE Questions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question_text VARCHAR(255) NOT NULL
+);
+
+INSERT INTO Questions (question_text) VALUES
+('What item is a crafting table made out of?'),
+('What mob is only found in the nether'),
+('What item do you use to tame a wolf?'),
+('What is the strongest material in Minecraft'),
+('What is the final boss in Minecraft'),
+('What programming language was Minecraft written in?'),
+('Which one of these is not a biome?'),
+('Which of these animals is not tameable?'),
+('What item lets you teleport?'),
+('Who created Minecraft?');
+
+ALTER TABLE Questions
+ADD COLUMN answer1 VARCHAR(255),
+ADD COLUMN answer2 VARCHAR(255),
+ADD COLUMN answer3 VARCHAR(255),
+ADD COLUMN answer4 VARCHAR(255);
+ADD COLUMN correct_answer VARCHAR(255);
+
+UPDATE Questions SET 
+answer1 = 'Diamonds', 
+answer2 = 'Wood Planks', 
+answer3 = 'Stone', 
+answer4 = 'Wool' 
+WHERE question_text LIKE 'What item is a crafting table made out of?%';
+
+UPDATE Questions SET 
+answer1 = 'Creeper', 
+answer2 = 'Enderman', 
+answer3 = 'Zombie', 
+answer4 = 'Ghast' 
+WHERE question_text LIKE 'What mob is only found in the nether%';
+
+UPDATE Questions SET 
+answer1 = 'Bone', 
+answer2 = 'Meat', 
+answer3 = 'Apple', 
+answer4 = 'Bread' 
+WHERE question_text LIKE 'What item do you use to tame a wolf?%';
+
+UPDATE Questions SET 
+answer1 = 'Iron', 
+answer2 = 'Wood', 
+answer3 = 'Diamond', 
+answer4 = 'Gold' 
+WHERE question_text LIKE 'What is the strongest material in Minecraft%';
+
+UPDATE Questions SET 
+answer1 = 'The Wither', 
+answer2 = 'Ender Dragon', 
+answer3 = 'Zombie Pigman', 
+answer4 = 'Elder Guardian' 
+WHERE question_text LIKE 'What is the final boss in Minecraft%';
+
+UPDATE Questions SET 
+answer1 = 'Python', 
+answer2 = 'C#', 
+answer3 = 'Java', 
+answer4 = 'JavaScript' 
+WHERE question_text LIKE 'What programming language was Minecraft written in?%';
+
+UPDATE Questions SET 
+answer1 = 'Savanna', 
+answer2 = 'Tundra', 
+answer3 = 'Volcano', 
+answer4 = 'Forest' 
+WHERE question_text LIKE 'Which one of these is not a biome?%';
+
+UPDATE Questions SET 
+answer1 = 'Wolf', 
+answer2 = 'Parrot', 
+answer3 = 'Ocelot', 
+answer4 = 'Creeper' 
+WHERE question_text LIKE 'Which of these animals is not tameable?%';
+
+UPDATE Questions SET 
+answer1 = 'Ender Pearl', 
+answer2 = 'Diamond Sword', 
+answer3 = 'Redstone', 
+answer4 = 'Torch' 
+WHERE question_text LIKE 'What item lets you teleport?%';
+
+UPDATE Questions SET 
+answer1 = 'Markus Persson', 
+answer2 = 'Bill Gates', 
+answer3 = 'Steve Jobs', 
+answer4 = 'Elon Musk' 
+WHERE question_text LIKE 'Who created Minecraft?%';
+
+UPDATE Questions SET correct_answer = 'Wood Planks' WHERE question_text LIKE 'What item is a crafting table made out of?%';
+UPDATE Questions SET correct_answer = 'Ghast' WHERE question_text LIKE 'What mob is only found in the nether%';
+UPDATE Questions SET correct_answer = 'Bone' WHERE question_text LIKE 'What item do you use to tame a wolf?%';
+UPDATE Questions SET correct_answer = 'Diamond' WHERE question_text LIKE 'What is the strongest material in Minecraft%';
+UPDATE Questions SET correct_answer = 'Ender Dragon' WHERE question_text LIKE 'What is the final boss in Minecraft%';
+UPDATE Questions SET correct_answer = 'Java' WHERE question_text LIKE 'What programming language was Minecraft written in?%';
+UPDATE Questions SET correct_answer = 'Volcano' WHERE question_text LIKE 'Which one of these is not a biome?%';
+UPDATE Questions SET correct_answer = 'Creeper' WHERE question_text LIKE 'Which of these animals is not tameable?%';
+UPDATE Questions SET correct_answer = 'Ender Pearl' WHERE question_text LIKE 'What item lets you teleport?%';
+UPDATE Questions SET correct_answer = 'Markus Persson' WHERE question_text LIKE 'Who created Minecraft?%';
+
